@@ -22,3 +22,9 @@ And finally, to run a project, change to it and run..
 ```
 lein run
 ```
+
+If we want the nREPL server up..
+
+```
+lein repl
+```
