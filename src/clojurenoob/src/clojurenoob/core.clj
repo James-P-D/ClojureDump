@@ -94,6 +94,105 @@
 
   (println "Make lowercase")
   (println (str/lower-case someString))  
+
+  (println "Concatonate")
+  (println (str "foo, " "bar and " "moo"))  
+)
+
+;;;;;;;;;;;;;;;;;;;
+;; List Examples ;;
+;;;;;;;;;;;;;;;;;;;
+
+(defn list-examples
+  []
+  
+  (println "----------------------------------------------------------------")
+  
+  ; Lists can contain multiple types
+  (println "List of different types")
+  (println (list "Dog" 1 3.4 true))
+  
+  (println "Display the first item")
+  (println (first (list "Dog" 1 3.4 true)))
+ 
+  (println "Display the rest of the itema")
+  (println (rest (list "Dog" 1 3.4 true)))
+ 
+  (println "Display the Nth item (zero-indexed, so '1st' item will actually be second")
+  (println (nth (list "Dog" 1 3.4 true) 1))
+ 
+  (println "Append items") ; note the square brackets!
+  (println (list* 99 100 ["Dog" 1 3.4 true]))
+  
+  (println "Prepend items")
+  (println (cons -1 (list "Dog" 1 3.4 true)))
+)
+
+;;;;;;;;;;;;;;;;;;
+;; Set Examples ;;
+;;;;;;;;;;;;;;;;;;
+
+(defn set-examples
+  []
+  
+  (println "----------------------------------------------------------------")
+  
+  (println "Sets contain unique values")
+  (println (set '(1 1 2 2 3 4 5 6 6)))
+  
+  (println "Note that sets are randomly ordered")
+  (println (set '(1 2 3 4 5 6 7 8 9 10)))
+ 
+  (println "If we need the set sorted we use sorted-set")
+  (println (sorted-set 1 2 3 4 5 6 7 8 9 10))
+ 
+  ; Get an index
+  (println "we can still get (1-indexed) values")
+  (println "5th:")
+  (println (get (set '(1 2 3 4 5 6 7 8 9 10)) 5)) ; returns 5
+  (println "1st:")
+  (println (get (set '(1 2 3 4 5 6 7 8 9 10)) 1)) ; returns 1
+  (println "0th:")
+  (println (get (set '(1 2 3 4 5 6 7 8 9 10)) 0)) ; returns nil
+ 
+  ; Append a value
+  (println "Append 5")  
+  (println (conj (set '(1 2 3 4)) 5))
+ 
+  (println "Is 3 in the set?")
+  (println (contains? (set '(1 2 3 4)) 3))
+  (println "Is 5 in the set?")
+  (println (contains? (set '(1 2 3 4)) 5))
+ 
+  (println "Remove 3 from the set")
+  (println (disj (set '(1 2 3 4 5)) 3))
+)
+
+;;;;;;;;;;;;;;;;;;;;;;
+;; Vectors Examples ;;
+;;;;;;;;;;;;;;;;;;;;;;
+
+(defn vector-examples
+  []
+  
+  (println "----------------------------------------------------------------")
+  
+  (println "Vectors can contain multiple types of data")
+  (println (vector 1 "Dog" 3.1415 99))
+ 
+  (println "Get the 1st element")
+  (println (get (vector 1 "Dog" 3.1415 99) 1)) ; Returns "Dog"
+  (println "Get the 0th element")
+  (println (get (vector 1 "Dog" 3.1415 99) 0)) ; Returns 1
+  
+  (println "Appent 100")
+  (println (conj (vector 1 "Dog" 3.1415 99) 100))
+ 
+  (println "remove the last element")
+  (println (pop (vector 1 "Dog" 3.1415 99)))
+ 
+  (println "Get a range")
+  (println (subvec (vector 1 2 3 4 5 6 7 8) 3 6)) ; [ 4 5 6]
 )
 
 (defn -main
@@ -105,16 +204,22 @@
   (println "Hello, world!")
   
   ; Basic printing to console
-  (variable-examples)
+  ;(variable-examples)
   
   ; Basic string operators
   (string-examples)
   
+  ; Basic list examples
+  ;(list-examples)
+  
+  ; Basic set examples
+  ;(set-examples)
+  
+  ; Basic vector examples
+  (vector-examples)
+  
+  
   ; First element of vector
-  ; (println (first [10 20 30]))
-
-  ; Print Nth element of (zero-indexed) vector
-  ; (println (nth [10 20 30 40] 2))
   
   ; We can concatonate strings with str
   ; (println (str "foo, " "bar and " "moo"))
