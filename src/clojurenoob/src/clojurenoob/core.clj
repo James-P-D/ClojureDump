@@ -195,6 +195,56 @@
   (println (subvec (vector 1 2 3 4 5 6 7 8) 3 6)) ; [ 4 5 6]
 )
 
+;;;;;;;;;;;;;;;;;;;;;;
+;; Map Examples ;;
+;;;;;;;;;;;;;;;;;;;;;;
+
+(defn map-examples
+  []
+  
+  (println "----------------------------------------------------------------")
+  
+  (println "We can create hash-maps (unsorted)")
+  (def my-hash-map (hash-map "Name" "James" "Age" 38 "Height" 183))
+  (println my-hash-map)
+
+  (println "We can create sorted-hash-maps")
+  (def my-sorted-hash-map (sorted-map 1 "foo" 2 "bar" 3 "baz"))  
+  (println my-sorted-hash-map)
+ 
+  (println "We can get values from hash-maps by key")
+  (println (get my-hash-map "Name"))
+  (println "We can get values from sorted-hash-maps by key")
+  (println (get my-sorted-hash-map 2))
+ 
+  (println "We can get the key/value from hash-maps")
+  (println (find my-hash-map "Name"))
+  (println "We can get the key/value from sorted-hash-maps")
+  (println (find my-sorted-hash-map 2))
+ 
+  (println "We can check hash-maps for certain keys. E.g. Name")
+  (println (contains? my-hash-map "Name"))
+  (println "We can check sorted-hash-maps for certain keys. E.g. 2")
+  (println (contains? my-sorted-hash-map 2))
+ 
+  (println "We can get the keys for a hash-map")
+  (println (keys my-hash-map))
+  (println "We can get the keys for a sorted-hash-map")
+  (println (keys my-sorted-hash-map))
+ 
+  (println "We can get the values for a hash-map")
+  (println (vals my-hash-map))
+  (println "We can get the values for a sorted-hash-map")
+  (println (vals my-sorted-hash-map))
+ 
+  (println "We can add entries to existing hash-maps")
+  (def my-new-hash-map (merge-with + my-hash-map (hash-map "Weight" 82)))
+  (println my-new-hash-map) 
+  (println "We can add entries to existing sorted-hash-maps")
+  (def my-new-sorted-hash-map (merge-with + my-sorted-hash-map (sorted-map 4 "moo")))
+  (println my-new-sorted-hash-map) 
+)
+
 (defn -main
   ; This is just for documentation generation
   "I don't do a whole lot ... yet."
@@ -216,23 +266,11 @@
   ;(set-examples)
   
   ; Basic vector examples
-  (vector-examples)
+  ;(vector-examples)
   
+  ; Basic map examples
+  ; (map-examples)
   
-  ; First element of vector
-  
-  ; We can concatonate strings with str
-  ; (println (str "foo, " "bar and " "moo"))
-  
-  ; If statements
-  ;(if true 
-  ;  (println "its true")
-  ;  (println "its false"))
-    
-  ;(if (nil? [10 20 30])
-  ;  (println "nil!")
-  ;  (println "not nil!"))
-
   
   
 )
