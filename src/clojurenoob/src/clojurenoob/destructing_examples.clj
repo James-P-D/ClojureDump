@@ -16,6 +16,12 @@
   (println age)
 )
 
+(defn destructing-map-params-general
+  [{:keys [name age]}]
+  (println name)
+  (println age)
+)
+
 (defn destructing-examples
   []
 
@@ -43,5 +49,7 @@
   (println "We can also destruct parameter maps")
   (destructing-map-params mapVals)
   
-  (println "Finished")
+  (println "Finally, we can destruct parameter maps for general keys")
+  (destructing-map-params-general mapVals)
+
 )
