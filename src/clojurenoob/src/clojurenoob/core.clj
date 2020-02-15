@@ -53,7 +53,7 @@
   ;(agent-example)
   
   ; Basic function examples
-  (function-examples)
+  ;(function-examples)
   
   ; Basic conditional examples
   ;(conditional-examples)
@@ -65,7 +65,7 @@
   ;(file-io-examples)
   
   ; Destructing examples
-  ;(destructing-examples)
+  (destructing-examples)
   
   ; Struct-map examples
   ;(struct-map-examples)
