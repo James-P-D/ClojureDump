@@ -28,4 +28,8 @@
   
   (println "Prepend with conj")
   (println (conj (list "Dog" 1 3.4 true) -99))
+  
+  (println "Get length of list")
+  (println (count (list "Dog" 1 3.4 true)))
+
 )
